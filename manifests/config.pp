@@ -1,9 +1,9 @@
 class ssh::config{
-  file {'/etc/ssh/ssh_config':
+  file {'/etc/ssh/sshd_config':
     ensure  => file,
-    mode    => 0600,
-    owner    => 'root',
+    mode    => '0600',
+    owner   => 'root',
     group   => 'root',
-    content => 'puppet:///modules/ssh/ssh_config',
+    source  => 'puppet:///modules/ssh/sshd_config',
   }
 }
